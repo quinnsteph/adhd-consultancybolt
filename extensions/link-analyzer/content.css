@@ -1,0 +1,207 @@
+/* ── Link Highlights ──────────────────────────────────────────────────────── */
+
+a.seo-link-internal {
+  outline: 2px solid #22c55e !important;
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+a.seo-link-external {
+  outline: 2px solid #f97316 !important;
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+a.seo-link-nofollow {
+  outline: 2px solid #ef4444 !important;
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+/* ── Side Panel ───────────────────────────────────────────────────────────── */
+
+#seo-link-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100vh;
+  background: #0f0f0f;
+  color: #e8e8e8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.6);
+  border-left: 1px solid #222;
+}
+
+#seo-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #222;
+  flex-shrink: 0;
+}
+
+#seo-panel-header span {
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+}
+
+#seo-panel-close {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+#seo-panel-close:hover {
+  background: #222;
+  color: #fff;
+}
+
+#seo-panel-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #222;
+  flex-shrink: 0;
+}
+
+.seo-stat {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #1a1a1a;
+}
+
+.seo-stat.internal { color: #22c55e; }
+.seo-stat.external { color: #f97316; }
+.seo-stat.nofollow { color: #ef4444; }
+.seo-stat.dofollow { color: #3b82f6; }
+
+#seo-panel-filters {
+  display: flex;
+  gap: 4px;
+  padding: 8px 16px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.seo-filter {
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #888;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.seo-filter:hover {
+  border-color: #555;
+  color: #ccc;
+}
+
+.seo-filter.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  font-weight: 600;
+}
+
+#seo-panel-search {
+  margin: 0 16px 8px;
+  padding: 7px 10px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #e8e8e8;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+#seo-panel-search:focus {
+  outline: none;
+  border-color: #555;
+}
+
+#seo-panel-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 8px 8px;
+}
+
+.seo-link-row {
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background: #1a1a1a;
+  border-left: 3px solid #333;
+}
+
+.seo-row-internal.seo-row-dofollow { border-left-color: #22c55e; }
+.seo-row-external.seo-row-dofollow { border-left-color: #f97316; }
+.seo-row-internal.seo-row-nofollow { border-left-color: #ef4444; }
+.seo-row-external.seo-row-nofollow { border-left-color: #ef4444; }
+
+.seo-link-row-badges {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.seo-badge {
+  font-size: 9px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.seo-badge.internal { background: rgba(34,197,94,0.2); color: #22c55e; }
+.seo-badge.external { background: rgba(249,115,22,0.2); color: #f97316; }
+.seo-badge.nofollow { background: rgba(239,68,68,0.2); color: #ef4444; }
+.seo-badge.dofollow { background: rgba(59,130,246,0.2); color: #3b82f6; }
+
+.seo-link-row-text {
+  display: block;
+  color: #e8e8e8;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.seo-link-row-text:hover {
+  color: #3b82f6;
+}
+
+.seo-link-row-url {
+  font-size: 10px;
+  color: #555;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.seo-empty {
+  text-align: center;
+  color: #555;
+  padding: 24px;
+  font-size: 12px;
+}

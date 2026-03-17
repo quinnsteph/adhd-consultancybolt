@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Link Analyzer</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>SEO Link Analyzer</h1>
+    <p id="page-url"></p>
+  </div>
+
+  <div id="loading" class="loading">Analyzing links...</div>
+
+  <div id="stats" class="stats hidden">
+    <div class="stat-card internal">
+      <div class="stat-icon">🟢</div>
+      <div class="stat-info">
+        <div class="stat-count" id="count-internal">0</div>
+        <div class="stat-label">Internal</div>
+      </div>
+    </div>
+    <div class="stat-card external">
+      <div class="stat-icon">🟠</div>
+      <div class="stat-info">
+        <div class="stat-count" id="count-external">0</div>
+        <div class="stat-label">External</div>
+      </div>
+    </div>
+    <div class="stat-card nofollow">
+      <div class="stat-icon">🔴</div>
+      <div class="stat-info">
+        <div class="stat-count" id="count-nofollow">0</div>
+        <div class="stat-label">Nofollow</div>
+      </div>
+    </div>
+    <div class="stat-card dofollow">
+      <div class="stat-icon">🔵</div>
+      <div class="stat-info">
+        <div class="stat-count" id="count-dofollow">0</div>
+        <div class="stat-label">Dofollow</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="actions" class="actions hidden">
+    <button id="btn-highlight" class="btn btn-primary">Highlight Links</button>
+    <button id="btn-remove" class="btn btn-secondary">Remove Highlights</button>
+    <button id="btn-panel" class="btn btn-panel">Open Link Panel</button>
+  </div>
+
+  <div id="error" class="error hidden">
+    Could not analyze this page. Try refreshing.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
