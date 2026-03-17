@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Storage & Cookie Manager</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>Storage & Cookie Manager</h1>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="local">localStorage</button>
+    <button class="tab" data-tab="session">sessionStorage</button>
+    <button class="tab" data-tab="cookies">Cookies</button>
+  </div>
+
+  <div class="toolbar">
+    <input id="search" type="text" placeholder="Search keys..." />
+    <button id="btn-add">+ Add</button>
+    <button id="btn-clear-all">Clear All</button>
+  </div>
+
+  <div id="item-list"></div>
+
+  <!-- Edit modal -->
+  <div id="modal" class="hidden">
+    <div class="modal-box">
+      <h2 id="modal-title">Edit Item</h2>
+      <label>Key</label>
+      <input id="modal-key" type="text" placeholder="Key" />
+      <label>Value</label>
+      <textarea id="modal-value" rows="5" placeholder="Value"></textarea>
+      <div class="modal-actions">
+        <button id="modal-cancel">Cancel</button>
+        <button id="modal-save" class="btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

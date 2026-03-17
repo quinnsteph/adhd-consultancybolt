@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>API Request Logger</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>API Request Logger</h1>
+    <div class="header-actions">
+      <button id="btn-clear">Clear</button>
+    </div>
+  </div>
+
+  <div class="filters">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="fetch">Fetch</button>
+    <button class="filter" data-filter="xhr">XHR</button>
+    <button class="filter" data-filter="error">Errors</button>
+    <input id="search" type="text" placeholder="Filter URL..." />
+  </div>
+
+  <div id="log-list"></div>
+
+  <div id="detail-panel" class="hidden">
+    <div class="detail-header">
+      <button id="detail-back">← Back</button>
+      <span id="detail-title"></span>
+    </div>
+    <div id="detail-body"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
