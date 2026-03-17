@@ -1,0 +1,80 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  width: 300px;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.header {
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid #1e293b;
+}
+.header h1 { font-size: 13px; font-weight: 700; color: #818cf8; }
+.header p { font-size: 10px; color: #475569; margin-top: 2px; }
+
+#loading { padding: 24px; text-align: center; color: #475569; font-size: 11px; }
+
+#main { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+
+/* Score row */
+#score-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#score-badge {
+  border: 3px solid #334155;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.3s;
+}
+#score-num { font-size: 26px; font-weight: 800; line-height: 1; }
+#score-sub { font-size: 9px; color: #64748b; margin-top: 1px; text-align: center; }
+
+#score-meta { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.meta-item { display: flex; justify-content: space-between; align-items: baseline; }
+.meta-item span:first-child { font-weight: 600; color: #e2e8f0; }
+.meta-label { font-size: 10px; color: #475569; }
+
+/* Hemingway chips */
+#hem-row { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.hem-chip {
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+.hem-chip.very-long { background: rgba(252,165,165,0.15); color: #fca5a5; }
+.hem-chip.long      { background: rgba(253,230,138,0.15); color: #fde68a; }
+.hem-chip.passive   { background: rgba(147,197,253,0.15); color: #93c5fd; }
+.hem-chip.adverb    { background: rgba(187,247,208,0.15); color: #86efac; }
+
+/* Actions */
+#actions { display: flex; flex-direction: column; gap: 6px; }
+.btn {
+  padding: 9px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn:hover { background: #334155; }
+.btn.btn-primary { background: #818cf8; color: #fff; border-color: #818cf8; }
+.btn.btn-primary:hover { background: #6366f1; }
+.btn.active { background: #312e81; color: #818cf8; border-color: #4338ca; }
+
+#error { padding: 16px; text-align: center; color: #ef4444; font-size: 11px; }
+.hidden { display: none !important; }

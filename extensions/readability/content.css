@@ -1,0 +1,253 @@
+/* ── Bionic reading ─────────────────────────────────────────────────────── */
+.readability-bionic b {
+  font-weight: 700 !important;
+}
+
+/* ── Hemingway highlights ───────────────────────────────────────────────── */
+mark.hem-mark {
+  border-radius: 2px;
+  padding: 0 1px;
+  color: inherit;
+}
+
+mark.hem-very-long { background: rgba(252, 165, 165, 0.5) !important; }
+mark.hem-long      { background: rgba(253, 230, 138, 0.5) !important; }
+mark.hem-adverb    { background: rgba(187, 247, 208, 0.6) !important; }
+mark.hem-complex   { background: rgba(221, 214, 254, 0.6) !important; }
+
+/* ── Side panel ─────────────────────────────────────────────────────────── */
+#readability-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 340px;
+  height: 100vh;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.6);
+  border-left: 1px solid #1e293b;
+  overflow: hidden;
+}
+
+#rp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid #1e293b;
+  background: #0a0f1e;
+  flex-shrink: 0;
+}
+#rp-header span { font-weight: 700; font-size: 13px; color: #818cf8; }
+#rp-close {
+  background: none;
+  border: none;
+  color: #475569;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+#rp-close:hover { background: #1e293b; color: #e2e8f0; }
+
+#rp-tabs {
+  display: flex;
+  border-bottom: 1px solid #1e293b;
+  flex-shrink: 0;
+}
+.rp-tab {
+  flex: 1;
+  padding: 8px 4px;
+  background: none;
+  border: none;
+  color: #475569;
+  font-size: 11px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+.rp-tab.active { color: #818cf8; border-bottom-color: #818cf8; }
+.rp-tab:hover { color: #94a3b8; }
+
+.rp-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+}
+
+/* Score tab */
+.rp-score-hero {
+  border: 2px solid #334155;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.rp-score-num { font-size: 52px; font-weight: 800; line-height: 1; }
+.rp-score-label { font-size: 11px; color: #64748b; margin-top: 4px; }
+.rp-score-sublabel { font-size: 13px; font-weight: 600; margin-top: 4px; }
+
+.rp-grade-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.rp-stat {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.rp-stat-val { font-size: 16px; font-weight: 700; color: #e2e8f0; }
+.rp-stat-label { font-size: 10px; color: #64748b; margin-top: 2px; }
+
+.rp-ease-scale { margin-bottom: 8px; }
+.rp-ease-bar {
+  height: 8px;
+  background: #1e293b;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.rp-ease-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+.rp-ease-marker {
+  position: absolute;
+  top: -3px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+.rp-ease-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: #475569;
+}
+
+/* Hemingway tab */
+.rp-hem-summary { margin-bottom: 12px; }
+.rp-hem-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+  font-size: 12px;
+  color: #94a3b8;
+  border-bottom: 1px solid #1e293b;
+}
+.rp-hem-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.rp-hem-item.very-long .rp-hem-dot { background: #fca5a5; }
+.rp-hem-item.long .rp-hem-dot { background: #fde68a; }
+.rp-hem-item.passive .rp-hem-dot { background: #93c5fd; }
+.rp-hem-item.adverb .rp-hem-dot { background: #bbf7d0; }
+.rp-hem-item.complex .rp-hem-dot { background: #ddd6fe; }
+.rp-hem-item strong { color: #e2e8f0; }
+
+.rp-hem-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  color: #64748b;
+}
+.rp-legend-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.rp-hem-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.rp-btn-primary {
+  flex: 1;
+  padding: 8px;
+  background: #818cf8;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 11px;
+  cursor: pointer;
+}
+.rp-btn-primary:hover { background: #6366f1; }
+.rp-btn-secondary {
+  flex: 1;
+  padding: 8px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #94a3b8;
+  font-size: 11px;
+  cursor: pointer;
+}
+.rp-btn-secondary:hover { background: #334155; }
+
+.rp-section-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #475569;
+  margin: 10px 0 5px;
+}
+.rp-pill-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.rp-pill {
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 500;
+}
+.rp-pill.adverb { background: rgba(187,247,208,0.15); color: #86efac; }
+.rp-pill.complex { background: rgba(221,214,254,0.15); color: #c4b5fd; }
+
+/* Hard words tab */
+.rp-words-hint {
+  font-size: 10px;
+  color: #475569;
+  margin-bottom: 10px;
+}
+.rp-hard-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+.rp-hard-row:hover { background: #1e293b; }
+.rp-hard-word { flex: 1; color: #c4b5fd; font-weight: 500; }
+.rp-hard-syl { font-size: 10px; color: #475569; }
+.rp-hard-count { font-size: 10px; color: #64748b; min-width: 28px; text-align: right; }
+
+.rp-empty {
+  text-align: center;
+  color: #334155;
+  padding: 30px 10px;
+  font-size: 12px;
+}
+
+.hidden { display: none !important; }

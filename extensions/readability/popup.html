@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Readability Suite</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="header">
+    <h1>Readability Suite</h1>
+    <p id="page-host"></p>
+  </div>
+
+  <div id="loading">Analyzing page...</div>
+
+  <div id="main" class="hidden">
+    <!-- Quick score badge -->
+    <div id="score-row">
+      <div id="score-badge">
+        <div id="score-num"></div>
+        <div id="score-sub">Reading Ease</div>
+      </div>
+      <div id="score-meta">
+        <div class="meta-item"><span id="meta-grade"></span><span class="meta-label">Grade level</span></div>
+        <div class="meta-item"><span id="meta-words"></span><span class="meta-label">Words</span></div>
+        <div class="meta-item"><span id="meta-time"></span><span class="meta-label">Read time</span></div>
+      </div>
+    </div>
+
+    <!-- Hemingway quick stats -->
+    <div id="hem-row">
+      <div class="hem-chip very-long" id="chip-vlong"></div>
+      <div class="hem-chip long" id="chip-long"></div>
+      <div class="hem-chip passive" id="chip-passive"></div>
+      <div class="hem-chip adverb" id="chip-adverb"></div>
+    </div>
+
+    <!-- Actions -->
+    <div id="actions">
+      <button id="btn-bionic" class="btn">Bionic Reading</button>
+      <button id="btn-panel" class="btn btn-primary">Open Full Panel</button>
+    </div>
+  </div>
+
+  <div id="error" class="hidden">Cannot analyze this page.</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
